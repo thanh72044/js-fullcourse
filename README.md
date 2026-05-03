@@ -24,11 +24,43 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
    - Kiểm tra tab **History** để xem các bản lưu cũ.
    - Phải thực hiện **Stage** -> **Commit** để lưu thay đổi mới vào lịch sử.
 
-## 🚀 Kế hoạch phát triển (To-do)
-- [x] Cấu trúc lại thư mục Project (đưa file ra root).
-- [x] Kết nối và quản lý code bằng SourceTree & GitHub.
-- [ ] Hoàn thiện logic thêm sản phẩm vào giỏ hàng.
-- [ ] Cập nhật giao diện hiện đại hơn.
+## 🚀 Lộ trình phát triển chi tiết (Roadmap)
+
+### Phase 1: Hoàn thiện Logic cốt lõi (JavaScript)
+- [ ] **Quản lý dữ liệu sản phẩm**: Tạo mảng `products` chứa thông tin (id, name, price, image).
+- [ ] **Render sản phẩm động**: Dùng JavaScript để tự động hiển thị danh sách sản phẩm từ mảng lên HTML.
+- [ ] **Xử lý Giỏ hàng (Cart Logic)**:
+    - [ ] Hàm `addToCart()`: Thêm sản phẩm vào mảng giỏ hàng.
+    - [ ] Hàm `updateCartCount()`: Cập nhật số lượng trên biểu tượng giỏ hàng.
+    - [ ] Tính tổng tiền (Total price) tự động.
+- [ ] **Lưu trữ dữ liệu**: Sử dụng `localStorage` để giỏ hàng không bị mất khi load lại trang.
+
+### Phase 2: Nâng cấp Giao diện (UI/UX & CSS)
+- [ ] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
+- [ ] **Card sản phẩm chuyên nghiệp**: Thêm hiệu ứng Hover, nút "Add to Cart" nổi bật.
+- [ ] **Thiết kế modal/sidebar Giỏ hàng**: Hiển thị danh sách các món đồ đã chọn một cách đẹp mắt.
+- [ ] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
+
+### Phase 3: Hiệu ứng & Trải nghiệm người dùng
+- [ ] **Micro-animations**: Hiệu ứng khi nhấn nút thêm vào giỏ hàng.
+- [ ] **Thông báo (Toast Notification)**: Hiện thông báo nhỏ "Đã thêm vào giỏ" khi người dùng click.
+
+### Phase 4: Tính năng nâng cao
+- [ ] **Tìm kiếm sản phẩm**: Thanh search để lọc sản phẩm theo tên.
+- [ ] **Bộ lọc danh mục**: Lọc sản phẩm theo loại (ví dụ: Áo, Quần, Phụ kiện).
+- [ ] **Sắp xếp (Sorting)**: Sắp xếp theo giá tăng/giảm dần hoặc theo độ phổ biến.
+- [ ] **Chi tiết sản phẩm (Quick View)**: Xem nhanh thông tin sản phẩm trong cửa sổ nhỏ.
+
+### Phase 5: Hoàn thiện & Đóng gói
+- [ ] **Trang thanh toán (Checkout)**: Form nhập thông tin khách hàng và xem lại đơn hàng cuối cùng.
+- [ ] **Trang trống (Empty State)**: Giao diện khi giỏ hàng chưa có gì.
+- [ ] **Tối ưu SEO**: Thêm các thẻ meta, title chuẩn SEO.
+- [ ] **Deploy**: Đưa trang web lên GitHub Pages hoặc Vercel để mọi người cùng xem.
+
+---
+## 📝 Nhật ký công việc (Tasks)
+- `[2026-05-03]` **Hoàn thành**: Cấu trúc lại thư mục và kết nối Git thành công.
+- `[Đang chờ]` **Sắp tới**: Bắt đầu viết logic Render sản phẩm trong `index.js`.
 
 ---
 *Cập nhật lần cuối: 03/05/2026 bởi Antigravity AI.*
