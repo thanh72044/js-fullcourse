@@ -67,6 +67,7 @@ addToCart.forEach(function (btn) {
         cart.push(productClicked)
         updateCartBadge()
         saveCart()
+        renderCart()
         console.log("giỏ hàng hiện tại", cart)
         btn.innerText = "dã thêm ✔"
         btn.style.background = "#10b981";
@@ -117,9 +118,10 @@ function renderCart() {
     totalPrice.innerText = total.localStorage('vi-vn') + "đ"
 }
 
-function removeCart(index) {
+function removeItem(index) {
     cart.splice(index, 1)
     saveCart()
     updateCartBadge()
     renderCart()
 }
+renderCart()
