@@ -115,7 +115,7 @@ function renderCart() {
         cartItemContainer.innerHTML += itemHTML
 
     })
-    totalPrice.innerText = total.localStorage('vi-vn') + "đ"
+    totalPrice.innerText = total.toLocaleString('vi-vn') + "đ"
 }
 
 function removeItem(index) {

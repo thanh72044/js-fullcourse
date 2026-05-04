@@ -30,15 +30,15 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 - [x] **Quản lý dữ liệu sản phẩm**: Tạo mảng `products` chứa thông tin (id, name, price, image).
 - [x] **Render sản phẩm động**: Dùng JavaScript để tự động hiển thị danh sách sản phẩm từ mảng lên HTML.
 - [ ] **Xử lý Giỏ hàng (Cart Logic)**:
-    - [ ] Hàm `addToCart()`: Thêm sản phẩm vào mảng giỏ hàng.
-    - [ ] Hàm `updateCartCount()`: Cập nhật số lượng trên biểu tượng giỏ hàng.
-    - [ ] Tính tổng tiền (Total price) tự động.
+    - [x] Hàm `addToCart()`: Thêm sản phẩm vào mảng giỏ hàng.
+    - [x] Hàm `updateCartCount()`: Cập nhật số lượng trên biểu tượng giỏ hàng.
+    - [x] Tính tổng tiền (Total price) tự động.
 - [x] **Lưu trữ dữ liệu**: Sử dụng `localStorage` để giỏ hàng không bị mất khi load lại trang.
 
 ### Phase 2: Nâng cấp Giao diện (UI/UX & CSS)
 - [ ] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
 - [ ] **Card sản phẩm chuyên nghiệp**: Thêm hiệu ứng Hover, nút "Add to Cart" nổi bật.
-- [ ] **Thiết kế modal/sidebar Giỏ hàng**: Hiển thị danh sách các món đồ đã chọn một cách đẹp mắt.
+- [x] **Thiết kế modal/sidebar Giỏ hàng**: Hiển thị danh sách các món đồ đã chọn một cách đẹp mắt.
 - [ ] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
 
 ### Phase 3: Hiệu ứng & Trải nghiệm người dùng
@@ -60,8 +60,8 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ---
 ## 📝 Nhật ký công việc (Tasks)
 - `[2026-05-03]` **Hoàn thành**: Cấu trúc lại thư mục và kết nối Git thành công.
-- `[2026-05-04]` **Hoàn thành**: Render sản phẩm động và logic thêm vào giỏ hàng cơ bản.
-- `[Đang chờ]` **Sắp tới**: Lưu trữ giỏ hàng vào `localStorage` và xây dựng giao diện hiển thị chi tiết giỏ hàng.
+- `[2026-05-04]` **Hoàn thành**: Tích hợp LocalStorage, xây dựng Sidebar giỏ hàng và tính tổng tiền tự động.
+- `[Đang chờ]` **Sắp tới**: Thêm tính năng thay đổi số lượng sản phẩm và thông báo Toast khi thêm hàng.
 
 ---
 *Cập nhật lần cuối: 03/05/2026 bởi Antigravity AI.*
