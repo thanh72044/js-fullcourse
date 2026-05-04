@@ -20,6 +20,27 @@
         </div>
     </header>
     <main class="products-container" id="products-container"></main>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Giỏ hàng của bạn</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+            <!-- Sản phẩm sẽ được render vào đây -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price-container">
+                <span>Tổng tiền:</span>
+                <span id="total-price">0đ</span>
+            </div>
+            <button class="checkout-btn">Thanh toán ngay</button>
+        </div>
+    </div>
+    <!-- Lớp nền mờ khi mở giỏ hàng -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <!-- KẾT THÚC CHÈN -->
     <script src="index.js"></script>
 </body>
 

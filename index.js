@@ -76,3 +76,50 @@ addToCart.forEach(function (btn) {
         }, 1500)
     });
 });
+const cartIcon = document.querySelector(".cart-icon")
+const cartSideBar = document.getElementById("cart-sidebar")
+const closeCartBtn = document.getElementById("close-cart")
+const cartOverLay = document.getElementById("cart-overlay")
+
+cartIcon.addEventListener("click", function () {
+    cartSideBar.classList.add("open")
+    cartOverLay.classList.add("open")
+})
+
+function closeCart() {
+    cartSideBar.classList.remove("open")
+    cartOverLay.classList.remove("open")
+}
+closeCartBtn.addEventListener("click", closeCart)
+cartOverLay.addEventListener("click", closeCart)
+
+const cartItemContainer = document.getElementById("cart-items")
+const totalPrice = document.getElementById("total-price")
+
+function renderCart() {
+    cartItemContainer.innerHTML = ""
+    let total = 0
+    cart.forEach(function (item, index) {
+        total += item.price
+        const itemHTML = ` <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.price.toLocaleString('vi-VN')}đ</p>
+                </div>
+                <button class="remove-item" onclick="removeItem(${index})">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>`;
+        cartItemContainer.innerHTML += itemHTML
+
+    })
+    totalPrice.innerText = total.localStorage('vi-vn') + "đ"
+}
+
+function removeCart(index) {
+    cart.splice(index, 1)
+    saveCart()
+    updateCartBadge()
+    renderCart()
+}

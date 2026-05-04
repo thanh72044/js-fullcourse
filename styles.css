@@ -62,7 +62,8 @@ header {
 
 .logo h1 i {
     color: var(--primary);
-    -webkit-text-fill-color: initial; /* Giữ icon có màu nguyên bản */
+    -webkit-text-fill-color: initial;
+    /* Giữ icon có màu nguyên bản */
 }
 
 /* 3. ICON GIỎ HÀNG NỔI BẬT */
@@ -129,7 +130,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.02) 100%);
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.02) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -142,7 +143,8 @@ header {
 }
 
 .product-card:hover .product-img {
-    transform: scale(1.08); /* Phóng to nhẹ ảnh khi đưa chuột vào thẻ */
+    transform: scale(1.08);
+    /* Phóng to nhẹ ảnh khi đưa chuột vào thẻ */
 }
 
 /* 6. THÔNG TIN SẢN PHẨM BÊN TRONG THẺ */
@@ -175,7 +177,8 @@ header {
 
 /* 7. NÚT THÊM VÀO GIỎ HÀNG (GRADIENT & ANIMATION) */
 .add-to-cart-btn {
-    margin-top: auto; /* Đẩy nút xuống dưới cùng của thẻ */
+    margin-top: auto;
+    /* Đẩy nút xuống dưới cùng của thẻ */
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
     color: white;
     border: none;
@@ -206,7 +209,8 @@ header {
 
 /* Thêm icon giỏ hàng nhỏ vào trong nút */
 .add-to-cart-btn::before {
-    content: '\f217'; /* Unicode của FontAwesome cart-shopping */
+    content: '\f217';
+    /* Unicode của FontAwesome cart-shopping */
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
 }
@@ -216,13 +220,142 @@ header {
     header {
         padding: 15px 20px;
     }
-    
+
     .products-container {
         padding: 0 20px;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
-    
+
     .logo h1 {
         font-size: 24px;
     }
+}
+
+/* --- SIDEBAR GIỎ HÀNG --- */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* Lúc đầu sẽ ẩn bên phải */
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Class này sẽ được JS thêm vào để hiện sidebar */
+.cart-sidebar.open {
+    transform: translateX(0);
+}
+
+/* Lớp nền mờ */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    /* Ẩn mặc định */
+}
+
+.cart-overlay.open {
+    display: block;
+}
+
+/* Header & Footer của Sidebar */
+.cart-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Cuộn nếu giỏ hàng quá dài */
+    padding: 20px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #ff4d4f;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.remove-item:hover {
+    transform: scale(1.2);
 }
