@@ -45,9 +45,17 @@ function renderProduct() {
 
 }
 renderProduct()
-const cart = []
+const cart = JSON.parse(localStorage.getItem("goodshop_cart")) || []
 const cartBadge = document.querySelector(".cart-count");
 
+function updateCartBadge() {
+    cartBadge.innerText = cart.length
+}
+
+function saveCart() {
+    localStorage.setItem("goodshop_cart", JSON.stringify(cart))
+}
+updateCartBadge()
 const addToCart = document.querySelectorAll(".add-to-cart-btn");
 
 addToCart.forEach(function (btn) {
@@ -57,7 +65,8 @@ addToCart.forEach(function (btn) {
             return p.id === productId
         })
         cart.push(productClicked)
-        cartBadge.innerText = cart.length;
+        updateCartBadge()
+        saveCart()
         console.log("giỏ hàng hiện tại", cart)
         btn.innerText = "dã thêm ✔"
         btn.style.background = "#10b981";

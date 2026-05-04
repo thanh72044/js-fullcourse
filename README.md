@@ -27,13 +27,13 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ## 🚀 Lộ trình phát triển chi tiết (Roadmap)
 
 ### Phase 1: Hoàn thiện Logic cốt lõi (JavaScript)
-- [ ] **Quản lý dữ liệu sản phẩm**: Tạo mảng `products` chứa thông tin (id, name, price, image).
-- [ ] **Render sản phẩm động**: Dùng JavaScript để tự động hiển thị danh sách sản phẩm từ mảng lên HTML.
+- [x] **Quản lý dữ liệu sản phẩm**: Tạo mảng `products` chứa thông tin (id, name, price, image).
+- [x] **Render sản phẩm động**: Dùng JavaScript để tự động hiển thị danh sách sản phẩm từ mảng lên HTML.
 - [ ] **Xử lý Giỏ hàng (Cart Logic)**:
     - [ ] Hàm `addToCart()`: Thêm sản phẩm vào mảng giỏ hàng.
     - [ ] Hàm `updateCartCount()`: Cập nhật số lượng trên biểu tượng giỏ hàng.
     - [ ] Tính tổng tiền (Total price) tự động.
-- [ ] **Lưu trữ dữ liệu**: Sử dụng `localStorage` để giỏ hàng không bị mất khi load lại trang.
+- [x] **Lưu trữ dữ liệu**: Sử dụng `localStorage` để giỏ hàng không bị mất khi load lại trang.
 
 ### Phase 2: Nâng cấp Giao diện (UI/UX & CSS)
 - [ ] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
@@ -60,7 +60,8 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ---
 ## 📝 Nhật ký công việc (Tasks)
 - `[2026-05-03]` **Hoàn thành**: Cấu trúc lại thư mục và kết nối Git thành công.
-- `[Đang chờ]` **Sắp tới**: Bắt đầu viết logic Render sản phẩm trong `index.js`.
+- `[2026-05-04]` **Hoàn thành**: Render sản phẩm động và logic thêm vào giỏ hàng cơ bản.
+- `[Đang chờ]` **Sắp tới**: Lưu trữ giỏ hàng vào `localStorage` và xây dựng giao diện hiển thị chi tiết giỏ hàng.
 
 ---
 *Cập nhật lần cuối: 03/05/2026 bởi Antigravity AI.*
