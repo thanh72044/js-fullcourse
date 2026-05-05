@@ -141,6 +141,9 @@ function changeQuantity(index, amount) {
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1)
     }
+    saveCart()
+    updateCartBadge()
+    renderCart()
 }
 function removeItem(index) {
     cart.splice(index, 1)
