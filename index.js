@@ -115,12 +115,17 @@ function renderCart() {
     cartItemContainer.innerHTML = ""
     let total = 0
     cart.forEach(function (item, index) {
-        total += item.price
+        total += item.price * item.quantity
         const itemHTML = ` <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
                     <p>${item.price.toLocaleString('vi-VN')}đ</p>
+                     <div class="quantity-controls">
+                        <button onclick="changeQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQuantity(${index}, 1)">+</button>
+                    </div>
                 </div>
                 <button class="remove-item" onclick="removeItem(${index})">
                     <i class="fa-solid fa-trash"></i>
@@ -131,7 +136,12 @@ function renderCart() {
     })
     totalPrice.innerText = total.toLocaleString('vi-vn') + "đ"
 }
-
+function changeQuantity(index, amount) {
+    cart[index].quantity += amount
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1)
+    }
+}
 function removeItem(index) {
     cart.splice(index, 1)
     saveCart()
