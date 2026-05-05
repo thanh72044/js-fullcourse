@@ -359,3 +359,53 @@ header {
 .remove-item:hover {
     transform: scale(1.2);
 }
+
+/* --- NÚT TĂNG GIẢM SỐ LƯỢNG --- */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.quantity-controls button {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+}
+
+/* --- TOAST NOTIFICATION --- */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: white;
+    border-left: 4px solid #10b981;
+    /* Màu xanh success */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

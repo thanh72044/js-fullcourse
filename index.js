@@ -65,6 +65,7 @@ addToCart.forEach(function (btn) {
             return p.id === productId
         })
         cart.push(productClicked)
+        showToast("đã thêm" + productClicked.name + "vào giỏ hàng")
         updateCartBadge()
         saveCart()
         renderCart()
@@ -125,3 +126,14 @@ function removeItem(index) {
     renderCart()
 }
 renderCart()
+
+function showToast(message) {
+    const toastContainer = document.getElementById("toast-container")
+    const toast = document.createElement("div")
+    toast.classList.add("toast")
+    toast.innerText = message
+    toastContainer.appendChild(toast)
+    setTimeout(function () {
+        toast.remove()
+    }, 3000)
+}
