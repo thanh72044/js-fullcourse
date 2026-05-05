@@ -65,7 +65,7 @@ addToCart.forEach(function (btn) {
             return p.id === productId
         })
         cart.push(productClicked)
-        showToast("đã thêm" + productClicked.name + "vào giỏ hàng")
+        showToast("đã thêm " + productClicked.name + " vào giỏ hàng")
         updateCartBadge()
         saveCart()
         renderCart()
