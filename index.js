@@ -137,6 +137,9 @@ function renderCart() {
     totalPrice.innerText = total.toLocaleString('vi-vn') + "đ"
 }
 function changeQuantity(index, amount) {
+    if (!cart[index]) {
+        return
+    }
     cart[index].quantity += amount
     if (cart[index].quantity <= 0) {
         cart.splice(index, 1)
