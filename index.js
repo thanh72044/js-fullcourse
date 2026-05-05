@@ -49,7 +49,12 @@ const cart = JSON.parse(localStorage.getItem("goodshop_cart")) || []
 const cartBadge = document.querySelector(".cart-count");
 
 function updateCartBadge() {
-    cartBadge.innerText = cart.length
+
+    let totalItem = 0
+    cart.forEach(function (item) {
+        totalItem += item.quantity
+    })
+    cartBadge.innerText = totalItem
 }
 
 function saveCart() {
@@ -64,7 +69,15 @@ addToCart.forEach(function (btn) {
         const productClicked = products.find(function (p) {
             return p.id === productId
         })
-        cart.push(productClicked)
+        const existingItem = cart.find(function (item) {
+            return item.id === productId
+        })
+        if (existingItem) {
+            existingItem.quantity += 1
+        } else {
+            const newProduct = { ...productClicked, quantity: 1 }
+            cart.push(newProduct)
+        }
         showToast("đã thêm " + productClicked.name + " vào giỏ hàng")
         updateCartBadge()
         saveCart()
