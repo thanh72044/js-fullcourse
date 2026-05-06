@@ -123,12 +123,17 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+    /* 1. Dịch chuyển card đi LÊN trên 10px */
+    transform: translateY(-10px);
+
+    /* 2. Đổ bóng to hơn để tạo cảm giác card đang lơ lửng */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Vùng chứa ảnh để làm hiệu ứng hover ảnh mượt mà */
 .product-card::before {
@@ -202,6 +207,15 @@ header {
     align-items: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.add-to-cart-btn:hover {
+    /* Đổi màu nền tối hơn một chút khi di chuột vào */
+    background-color: #4338ca;
+    /* Hoặc mã màu bạn thích */
+
+    /* Cho nút phình to ra 5% */
+    transform: scale(1.05);
 }
 
 .add-to-cart-btn:hover {
