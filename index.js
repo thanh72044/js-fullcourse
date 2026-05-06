@@ -38,6 +38,7 @@ const textInput = document.getElementById("search-input")
 
 
 function renderProduct(danhsach) {
+    productContainer.innerHTML = "";
     danhsach.forEach(function (product) {
         const productHTML = `
     <div class = "product-card">
@@ -84,8 +85,8 @@ function renderProduct(danhsach) {
 
 }
 
-renderProduct(products)
 const cart = JSON.parse(localStorage.getItem("goodshop_cart")) || []
+renderProduct(products)
 function updateCartBadge() {
 
     let totalItem = 0
@@ -169,8 +170,8 @@ function showToast(message) {
 textInput.addEventListener("input", function (event) {
     const TextCanTim = event.target.value.toLowerCase();
     const ketQua = products.filter(function (product) {
-        const tenSanPham = product.name.toLowerCase()
-        return tenSanPham.includes(TextCanTim)
+        const tenSanPham = product.name.toLowerCase();
+        return tenSanPham.includes(TextCanTim);
     })
-    renderProduct(ketQua)
+    renderProduct(ketQua);
 })
