@@ -431,3 +431,27 @@ header {
         opacity: 1;
     }
 }
+
+.search-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 30px;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 400px;
+    /* Không để ô tìm kiếm dài ngoằng */
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#search-input:focus {
+    border-color: #4338ca;
+    /* Đổi màu viền khi click vào */
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.2);
+}
