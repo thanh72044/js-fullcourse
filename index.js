@@ -42,6 +42,8 @@ function renderProduct(danhsach) {
         `;
         productContainer.innerHTML += productHTML
     })
+    const addToCart = document.querySelectorAll(".add-to-cart-btn");
+
     addToCart.forEach(function (btn) {
         btn.addEventListener("click", function () {
             const productId = Number(btn.getAttribute("data-id"));
@@ -72,6 +74,7 @@ function renderProduct(danhsach) {
     });
 
 }
+
 renderProduct(products)
 const cart = JSON.parse(localStorage.getItem("goodshop_cart")) || []
 const cartBadge = document.querySelector(".cart-count");
@@ -89,7 +92,6 @@ function saveCart() {
     localStorage.setItem("goodshop_cart", JSON.stringify(cart))
 }
 updateCartBadge()
-const addToCart = document.querySelectorAll(".add-to-cart-btn");
 
 
 const cartIcon = document.querySelector(".cart-icon")
