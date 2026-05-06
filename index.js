@@ -25,10 +25,7 @@ const products = [
     }
 ];
 console.log("danh sách sản phầm của tôi", products)
-
 const productContainer = document.getElementById("products-container");
-const addToCart = document.querySelectorAll(".add-to-cart-btn");
-const cartBadge = document.querySelector(".cart-count");
 const cartIcon = document.querySelector(".cart-icon")
 const cartSideBar = document.getElementById("cart-sidebar")
 const closeCartBtn = document.getElementById("close-cart")
@@ -53,7 +50,7 @@ function renderProduct(danhsach) {
         productContainer.innerHTML += productHTML
     })
 
-
+    const cartBadge = document.querySelector(".cart-count");
     addToCart.forEach(function (btn) {
         btn.addEventListener("click", function () {
             const productId = Number(btn.getAttribute("data-id"));
@@ -170,7 +167,7 @@ function showToast(message) {
 textInput.addEventListener("input", function (event) {
     const TextCanTim = event.target.value.toLowerCase();
     const ketQua = products.filter(function (product) {
-        const tenSanPham = product.name.toLowerCase
+        const tenSanPham = product.name.toLowerCase()
         return tenSanPham.includes(TextCanTim)
     })
     renderProduct(ketQua)
