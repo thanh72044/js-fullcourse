@@ -25,7 +25,9 @@ const products = [
     }
 ];
 console.log("danh sách sản phầm của tôi", products)
+
 const productContainer = document.getElementById("products-container");
+const cartBadge = document.querySelector(".cart-count");
 const cartIcon = document.querySelector(".cart-icon")
 const cartSideBar = document.getElementById("cart-sidebar")
 const closeCartBtn = document.getElementById("close-cart")
@@ -50,7 +52,7 @@ function renderProduct(danhsach) {
         productContainer.innerHTML += productHTML
     })
 
-    const cartBadge = document.querySelector(".cart-count");
+    const addToCart = document.querySelectorAll(".add-to-cart-btn");
     addToCart.forEach(function (btn) {
         btn.addEventListener("click", function () {
             const productId = Number(btn.getAttribute("data-id"));
