@@ -27,6 +27,16 @@ const products = [
 console.log("danh sách sản phầm của tôi", products)
 
 const productContainer = document.getElementById("products-container");
+const addToCart = document.querySelectorAll(".add-to-cart-btn");
+const cartBadge = document.querySelector(".cart-count");
+const cartIcon = document.querySelector(".cart-icon")
+const cartSideBar = document.getElementById("cart-sidebar")
+const closeCartBtn = document.getElementById("close-cart")
+const cartOverLay = document.getElementById("cart-overlay")
+const cartItemContainer = document.getElementById("cart-items")
+const totalPrice = document.getElementById("total-price")
+const textInput = document.getElementById("search-input")
+
 
 function renderProduct(danhsach) {
     danhsach.forEach(function (product) {
@@ -42,7 +52,7 @@ function renderProduct(danhsach) {
         `;
         productContainer.innerHTML += productHTML
     })
-    const addToCart = document.querySelectorAll(".add-to-cart-btn");
+
 
     addToCart.forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -77,8 +87,6 @@ function renderProduct(danhsach) {
 
 renderProduct(products)
 const cart = JSON.parse(localStorage.getItem("goodshop_cart")) || []
-const cartBadge = document.querySelector(".cart-count");
-
 function updateCartBadge() {
 
     let totalItem = 0
@@ -87,17 +95,10 @@ function updateCartBadge() {
     })
     cartBadge.innerText = totalItem
 }
-
 function saveCart() {
     localStorage.setItem("goodshop_cart", JSON.stringify(cart))
 }
 updateCartBadge()
-
-
-const cartIcon = document.querySelector(".cart-icon")
-const cartSideBar = document.getElementById("cart-sidebar")
-const closeCartBtn = document.getElementById("close-cart")
-const cartOverLay = document.getElementById("cart-overlay")
 
 cartIcon.addEventListener("click", function () {
     cartSideBar.classList.add("open")
@@ -110,9 +111,6 @@ function closeCart() {
 }
 closeCartBtn.addEventListener("click", closeCart)
 cartOverLay.addEventListener("click", closeCart)
-
-const cartItemContainer = document.getElementById("cart-items")
-const totalPrice = document.getElementById("total-price")
 
 function renderCart() {
     cartItemContainer.innerHTML = ""
@@ -169,7 +167,6 @@ function showToast(message) {
         toast.remove()
     }, 3000)
 }
-const textInput = document.getElementById("search-input")
 textInput.addEventListener("input", function (event) {
     const TextCanTim = event.target.value.toLowerCase();
     const ketQua = products.filter(function (product) {
