@@ -45,6 +45,14 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    /* 1. Kích hoạt hiệu ứng bám dính */
+    position: sticky;
+
+    /* 2. Dính ở vị trí cách viền trên cùng 0px */
+    top: 0;
+
+    /* 3. Đảm bảo header luôn nổi đè lên trên các sản phẩm khi cuộn */
+    z-index: 100;
 }
 
 .logo h1 {
