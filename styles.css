@@ -455,3 +455,45 @@ header {
     /* Đổi màu viền khi click vào */
     box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.2);
 }
+
+/* --- CSS CHO BỘ LỌC DANH MỤC --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa các nút */
+    gap: 15px;
+    /* Khoảng cách giữa các nút */
+    margin: 20px 0;
+    /* Cách trên dưới 20px */
+    flex-wrap: wrap;
+    /* Tự động xuống dòng nếu xem trên điện thoại */
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 2px solid #3b82f6;
+    /* Viền màu xanh dương */
+    background-color: transparent;
+    color: #3b82f6;
+    border-radius: 25px;
+    /* Bo tròn góc tạo cảm giác hiện đại */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Hiệu ứng chuyển đổi màu mượt mà */
+}
+
+/* Hiệu ứng khi di chuột vào (hover) */
+.filter-btn:hover {
+    background-color: #eff6ff;
+    /* Nền xanh siêu nhạt */
+}
+
+/* Kiểu dáng cho nút đang được chọn (có class 'active') */
+.filter-btn.active {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+    /* Đổ bóng nhẹ */
+}
