@@ -181,19 +181,21 @@ textInput.addEventListener("input", function (event) {
 })
 
 const filterBtns = document.querySelectorAll(".filter-btn")
-filterBtns.addEventListener("click", function (event) {
-    const selectedCategory = event.target.getAttribute("data-category")
-    let filterProducts = []
-    if (selectedCategory === "all") {
-        filterProducts === products;
-    } else {
-        filterProducts = products.filter(function (product) {
-            return product.category === selectedCategory
+filterBtns.forEach(function (btn) {
+    filterBtns.addEventListener("click", function (event) {
+        const selectedCategory = event.target.getAttribute("data-category")
+        let filterProducts = []
+        if (selectedCategory === "all") {
+            filterProducts === products;
+        } else {
+            filterProducts = products.filter(function (product) {
+                return product.category === selectedCategory
+            })
+        }
+        renderProduct(filterProducts)
+        filterBtns.forEach(function (b) {
+            b.classList.remove("active")
         })
-    }
-    renderProduct(filterProducts)
-    filterBtns.forEach(function (b) {
-        b.classList.remove("active")
         event.target.classList.add("active")
     })
 })
