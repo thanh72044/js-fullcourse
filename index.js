@@ -180,22 +180,20 @@ textInput.addEventListener("input", function (event) {
     renderProduct(ketQua);
 })
 
-const filterBtns = document.querySelectorAll(".filter-btn");
-filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (event) {
-        const selectedCategory = event.target.getAttribute("data-category")
-        let filterProducts = [];
-        if (selectedCategory === "all") {
-            filterProducts = products
-        } else {
-            filterProducts = products.filter(function (product) {
-                return product.category === selectedCategory;
-            })
-        }
-        renderProduct(filterProducts)
-        filterBtns.forEach(function (b) {
-            b.classList.remove("active")
+const filterBtns = document.querySelectorAll(".filter-btn")
+filterBtns.addEventListener("click", function (event) {
+    const selectedCategory = event.target.getAttribute("data-category")
+    let filterProducts = []
+    if (selectedCategory === "all") {
+        filterProducts === products;
+    } else {
+        filterProducts = products.filter(function (product) {
+            return product.category === selectedCategory
         })
+    }
+    renderProduct(filterProducts)
+    filterBtns.forEach(function (b) {
+        b.classList.remove("active")
         event.target.classList.add("active")
     })
 })
