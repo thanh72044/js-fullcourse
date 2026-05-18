@@ -189,8 +189,7 @@ filterBtns.forEach(function (btn) {
             filterProducts = products
         } else {
             filterProducts = products.filter(function (product) {
-                return
-                product.category === selectedCategory;
+                return product.category === selectedCategory;
             })
         }
         renderProduct(filterProducts)
