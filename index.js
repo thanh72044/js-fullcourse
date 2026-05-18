@@ -186,7 +186,7 @@ filterBtns.forEach(function (btn) {
         const selectedCategory = event.target.getAttribute("data-category")
         let filterProducts = [];
         if (selectedCategory === "all") {
-            filterProducts === products
+            filterProducts = products
         } else {
             filterProducts = products.filter(function (product) {
                 return
