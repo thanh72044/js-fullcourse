@@ -182,7 +182,7 @@ textInput.addEventListener("input", function (event) {
 
 const filterBtns = document.querySelectorAll(".filter-btn")
 filterBtns.forEach(function (btn) {
-    filterBtns.addEventListener("click", function (event) {
+    btn.addEventListener("click", function (event) {
         const selectedCategory = event.target.getAttribute("data-category")
         let filterProducts = []
         if (selectedCategory === "all") {
