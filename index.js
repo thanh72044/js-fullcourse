@@ -180,7 +180,7 @@ textInput.addEventListener("input", function (event) {
     renderProduct(ketQua);
 })
 
-const filterBtns = document.querySelectorAll("..filter-btn");
+const filterBtns = document.querySelectorAll(".filter-btn");
 filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (event) {
         const selectedCategory = event.target.getAttribute("data-category")
