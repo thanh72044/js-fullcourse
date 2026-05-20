@@ -43,11 +43,11 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 
 ### Phase 3: Hiệu ứng & Trải nghiệm người dùng
 - [ ] **Micro-animations**: Hiệu ứng khi nhấn nút thêm vào giỏ hàng.
-- [ ] **Thông báo (Toast Notification)**: Hiện thông báo nhỏ "Đã thêm vào giỏ" khi người dùng click.
+- [x] **Thông báo (Toast Notification)**: Hiện thông báo nhỏ "Đã thêm vào giỏ" khi người dùng click.
 
 ### Phase 4: Tính năng nâng cao
-- [ ] **Tìm kiếm sản phẩm**: Thanh search để lọc sản phẩm theo tên.
-- [ ] **Bộ lọc danh mục**: Lọc sản phẩm theo loại (ví dụ: Áo, Quần, Phụ kiện).
+- [x] **Tìm kiếm sản phẩm**: Thanh search để lọc sản phẩm theo tên.
+- [x] **Bộ lọc danh mục**: Lọc sản phẩm theo loại (ví dụ: Áo, Quần, Phụ kiện).
 - [ ] **Sắp xếp (Sorting)**: Sắp xếp theo giá tăng/giảm dần hoặc theo độ phổ biến.
 - [ ] **Chi tiết sản phẩm (Quick View)**: Xem nhanh thông tin sản phẩm trong cửa sổ nhỏ.
 
@@ -61,7 +61,8 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ## 📝 Nhật ký công việc (Tasks)
 - `[2026-05-03]` **Hoàn thành**: Cấu trúc lại thư mục và kết nối Git thành công.
 - `[2026-05-04]` **Hoàn thành**: Tích hợp LocalStorage, xây dựng Sidebar giỏ hàng và tính tổng tiền tự động.
-- `[Đang chờ]` **Sắp tới**: Thêm tính năng thay đổi số lượng sản phẩm và thông báo Toast khi thêm hàng.
+- `[2026-05-20]` **Hoàn thành**: Thêm tính năng thay đổi số lượng, thông báo Toast, tìm kiếm và lọc danh mục.
+- `[Đang chờ]` **Sắp tới**: Triển khai thiết kế Phase 2 (Header hiện đại, Card sản phẩm).
 
 ---
-*Cập nhật lần cuối: 03/05/2026 bởi Antigravity AI.*
+*Cập nhật lần cuối: 20/05/2026 bởi Antigravity AI.*

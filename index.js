@@ -186,7 +186,7 @@ filterBtns.forEach(function (btn) {
         const selectedCategory = event.target.getAttribute("data-category")
         let filterProducts = []
         if (selectedCategory === "all") {
-            filterProducts === products;
+            filterProducts = products;
         } else {
             filterProducts = products.filter(function (product) {
                 return product.category === selectedCategory
@@ -199,3 +199,21 @@ filterBtns.forEach(function (btn) {
         event.target.classList.add("active")
     })
 })
+
+const sortSelect = document.getElementById("sort-select");
+
+sortSelect.addEventListener("change", function(event) {
+    const sortValue = event.target.value;
+    
+    // Tạo bản sao để không làm thay đổi mảng gốc
+    let sortedProducts = [...products];
+
+    if (sortValue === "asc") {
+        sortedProducts.sort(function (a, b) {return a.price - b.price} )
+    } else if (sortValue === "desc") {
+        sortedProducts.sort(function (a, b) {return b.price - a.price} )
+    }
+
+    // Render lại giao diện
+    renderProduct(sortedProducts);
+});
