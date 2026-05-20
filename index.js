@@ -226,7 +226,7 @@ const quickViewModal = document.getElementById("quick-view-modal")
 const CloseModalBtn = document.getElementById("close-modal")
 
 function openQuickView(productId) {
-    const productClick = product.find(function (q) {
+    const productClick = products.find(function (q) {
         return q.id === productId
     })
     if (productClick) {
