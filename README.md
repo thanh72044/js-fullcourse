@@ -36,8 +36,8 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 - [x] **Lưu trữ dữ liệu**: Sử dụng `localStorage` để giỏ hàng không bị mất khi load lại trang.
 
 ### Phase 2: Nâng cấp Giao diện (UI/UX & CSS)
-- [ ] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
-- [ ] **Card sản phẩm chuyên nghiệp**: Thêm hiệu ứng Hover, nút "Add to Cart" nổi bật.
+- [x] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
+- [x] **Card sản phẩm chuyên nghiệp**: Thêm hiệu ứng Hover, nút "Add to Cart" nổi bật.
 - [x] **Thiết kế modal/sidebar Giỏ hàng**: Hiển thị danh sách các món đồ đã chọn một cách đẹp mắt.
 - [ ] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
 
@@ -48,7 +48,7 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ### Phase 4: Tính năng nâng cao
 - [x] **Tìm kiếm sản phẩm**: Thanh search để lọc sản phẩm theo tên.
 - [x] **Bộ lọc danh mục**: Lọc sản phẩm theo loại (ví dụ: Áo, Quần, Phụ kiện).
-- [ ] **Sắp xếp (Sorting)**: Sắp xếp theo giá tăng/giảm dần hoặc theo độ phổ biến.
+- [x] **Sắp xếp (Sorting)**: Sắp xếp theo giá tăng/giảm dần hoặc theo độ phổ biến.
 - [ ] **Chi tiết sản phẩm (Quick View)**: Xem nhanh thông tin sản phẩm trong cửa sổ nhỏ.
 
 ### Phase 5: Hoàn thiện & Đóng gói
@@ -61,8 +61,8 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ## 📝 Nhật ký công việc (Tasks)
 - `[2026-05-03]` **Hoàn thành**: Cấu trúc lại thư mục và kết nối Git thành công.
 - `[2026-05-04]` **Hoàn thành**: Tích hợp LocalStorage, xây dựng Sidebar giỏ hàng và tính tổng tiền tự động.
-- `[2026-05-20]` **Hoàn thành**: Thêm tính năng thay đổi số lượng, thông báo Toast, tìm kiếm và lọc danh mục.
-- `[Đang chờ]` **Sắp tới**: Triển khai thiết kế Phase 2 (Header hiện đại, Card sản phẩm).
+- `[2026-05-20]` **Hoàn thành**: Sắp xếp sản phẩm, tìm kiếm, lọc danh mục, Toast và cập nhật giao diện Phase 2.
+- `[Đang chờ]` **Sắp tới**: Triển khai tính năng Xem chi tiết sản phẩm (Quick View) và Phase 5.
 
 ---
 *Cập nhật lần cuối: 20/05/2026 bởi Antigravity AI.*
