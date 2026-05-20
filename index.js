@@ -213,8 +213,10 @@ sortSelect.addEventListener("change", function (event) {
         sortedProducts.sort(function (a, b) {
             return a.price - b.price;
         });
-    } else {
-        return b.price - a.price
+    } else if (sortValue === "desc") {
+        sortedProducts.sort(function (a, b) {
+            return b.price - a.price
+        })
     }
     renderProduct(sortedProducts);
 });
