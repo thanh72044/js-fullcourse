@@ -45,15 +45,16 @@ function renderProduct(danhsach) {
     productContainer.innerHTML = "";
     danhsach.forEach(function (product) {
         const productHTML = `
-    <div class = "product-card">
-    <img src = "${product.image}" alt ="${product.name}" class = "product-img">
-<div class = "product-info">
-<h3 class ="product-name">${product.name}</h3> 
-<p class = "product-price">${product.price.toLocaleString('vi-VN')}đ</p>
-<button class="add-to-cart-btn" data-id="${product.id}">thêm vào giỏ hàng</button>
-</div>
-    </div>
-        `;
+            <div class = "product-card">
+            <img src = "${product.image}" alt ="${product.name}" class = "product-img">
+        <img src="${product.image}" alt="${product.name}" class="product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;">
+        <div class = "product-info">
+        <h3 class ="product-name">${product.name}</h3> 
+        <p class = "product-price">${product.price.toLocaleString('vi-VN')}đ</p>
+        <button class="add-to-cart-btn" data-id="${product.id}">thêm vào giỏ hàng</button>
+        </div>
+            </div>
+                `;
         productContainer.innerHTML += productHTML
     })
 
@@ -220,3 +221,22 @@ sortSelect.addEventListener("change", function (event) {
     }
     renderProduct(sortedProducts);
 });
+
+const quickViewModal = document.getElementById("quick-view-modal")
+const CloseModalBtn = document.getElementById("close-modal")
+
+function openQuickView(productId) {
+    const productClick = product.find(function (q) {
+        return q.id === productId
+    })
+    if (productClick) {
+        document.getElementById("modal-img").src = productClicked.image;
+        document.getElementById("modal-name").innerText = productClicked.name;
+        document.getElementById("modal-price").innerText = productClicked.price.toLocaleString('vi-VN') + 'đ';
+        document.getElementById("modal-category").querySelector("span").innerText = productClicked.category;
+        quickViewModal.classList.add("open")
+    }
+    CloseModalBtn.addEventListener("click", function () {
+        quickViewModal.classList.remove("open")
+    })
+}
