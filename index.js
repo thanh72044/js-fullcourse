@@ -46,8 +46,7 @@ function renderProduct(danhsach) {
     danhsach.forEach(function (product) {
         const productHTML = `
             <div class = "product-card">
-            <img src = "${product.image}" alt ="${product.name}" class = "product-img">
-        <img src="${product.image}" alt="${product.name}" class="product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;">
+            <img src = "${product.image}" alt ="${product.name}" class = "product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;>
         <div class = "product-info">
         <h3 class ="product-name">${product.name}</h3> 
         <p class = "product-price">${product.price.toLocaleString('vi-VN')}đ</p>
