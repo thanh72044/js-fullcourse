@@ -46,7 +46,7 @@ function renderProduct(danhsach) {
     danhsach.forEach(function (product) {
         const productHTML = `
             <div class = "product-card">
-            <img src = "${product.image}" alt ="${product.name}" class = "product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;>
+    <img src="${product.image}" alt="${product.name}" class="product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;">
         <div class = "product-info">
         <h3 class ="product-name">${product.name}</h3> 
         <p class = "product-price">${product.price.toLocaleString('vi-VN')}đ</p>
@@ -229,10 +229,10 @@ function openQuickView(productId) {
         return q.id === productId
     })
     if (productClick) {
-        document.getElementById("modal-img").src = productClicked.image;
-        document.getElementById("modal-name").innerText = productClicked.name;
-        document.getElementById("modal-price").innerText = productClicked.price.toLocaleString('vi-VN') + 'đ';
-        document.getElementById("modal-category").querySelector("span").innerText = productClicked.category;
+        document.getElementById("modal-img").src = productClick.image;
+        document.getElementById("modal-name").innerText = productClick.name;
+        document.getElementById("modal-price").innerText = productClick.price.toLocaleString('vi-VN') + 'đ';
+        document.getElementById("modal-category").querySelector("span").innerText = productClick.category;
         quickViewModal.classList.add("open")
     }
     CloseModalBtn.addEventListener("click", function () {
