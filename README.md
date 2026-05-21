@@ -39,7 +39,7 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 - [x] **Thiết kế Header hiện đại**: Thanh điều hướng cố định (Sticky Header) với hiệu ứng bóng đổ.
 - [x] **Card sản phẩm chuyên nghiệp**: Thêm hiệu ứng Hover, nút "Add to Cart" nổi bật.
 - [x] **Thiết kế modal/sidebar Giỏ hàng**: Hiển thị danh sách các món đồ đã chọn một cách đẹp mắt.
-- [ ] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
+- [x] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
 
 ### Phase 3: Hiệu ứng & Trải nghiệm người dùng
 - [ ] **Micro-animations**: Hiệu ứng khi nhấn nút thêm vào giỏ hàng.

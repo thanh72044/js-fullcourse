@@ -80,9 +80,17 @@ function renderProduct(danhsach) {
       updateCartBadge();
       saveCart();
       renderCart();
-      console.log("giỏ hàng hiện tại", cart);
+      btn.classList.add("animating");
+      cartIcon.classList.add("bounce")
+      cartIcon.classList.add("bounce");
       btn.innerText = "dã thêm ✔";
       btn.style.background = "#10b981";
+      setTimeout(function () {
+        btn.classList.remove("animating")
+      }, 300);
+      setTimeout(function () {
+        cartIcon.classList.remove("bounce")
+      }, 400);
       setTimeout(function () {
         btn.innerText = "thêm vào giỏ hàng";
         btn.style.background = "";

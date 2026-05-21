@@ -596,3 +596,45 @@ header {
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+/* Hiệu ứng nảy cho nút khi nhấn */
+@keyframes button-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.9);
+    }
+
+    60% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.add-to-cart-btn.animating {
+    animation: button-pop 0.3s ease-out;
+}
+
+/* Hiệu ứng nảy cho giỏ hàng ở Header */
+@keyframes cart-bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cart-icon.bounce {
+    animation: cart-bounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
