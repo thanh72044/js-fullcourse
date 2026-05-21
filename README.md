@@ -29,7 +29,7 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 ### Phase 1: Hoàn thiện Logic cốt lõi (JavaScript)
 - [x] **Quản lý dữ liệu sản phẩm**: Tạo mảng `products` chứa thông tin (id, name, price, image).
 - [x] **Render sản phẩm động**: Dùng JavaScript để tự động hiển thị danh sách sản phẩm từ mảng lên HTML.
-- [ ] **Xử lý Giỏ hàng (Cart Logic)**:
+- [x] **Xử lý Giỏ hàng (Cart Logic)**:
     - [x] Hàm `addToCart()`: Thêm sản phẩm vào mảng giỏ hàng.
     - [x] Hàm `updateCartCount()`: Cập nhật số lượng trên biểu tượng giỏ hàng.
     - [x] Tính tổng tiền (Total price) tự động.
@@ -42,7 +42,7 @@ Các file chính hiện đang nằm tại thư mục gốc của repository:
 - [x] **Responsive Design**: Đảm bảo web hiển thị tốt trên cả điện thoại và máy tính.
 
 ### Phase 3: Hiệu ứng & Trải nghiệm người dùng
-- [ ] **Micro-animations**: Hiệu ứng khi nhấn nút thêm vào giỏ hàng.
+- [x] **Micro-animations**: Hiệu ứng khi nhấn nút thêm vào giỏ hàng.
 - [x] **Thông báo (Toast Notification)**: Hiện thông báo nhỏ "Đã thêm vào giỏ" khi người dùng click.
 
 ### Phase 4: Tính năng nâng cao

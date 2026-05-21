@@ -251,6 +251,37 @@ header {
     .logo h1 {
         font-size: 24px;
     }
+
+    /* Responsive cho Modal Xem nhanh chi tiết */
+    .modal-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .modal-body img {
+        width: 100%;
+        max-height: 250px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Đảm bảo sidebar giỏ hàng chiếm trọn màn hình trên điện thoại nhỏ */
+    .cart-sidebar {
+        width: 100%;
+    }
+
+    .filter-container {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
 }
 
 /* --- SIDEBAR GIỎ HÀNG --- */
