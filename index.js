@@ -6,12 +6,13 @@ async function fetchProduct() {
     const response = await fetch('https://fakestoreapi.com/products')
     const data = await response.json()
     products = data;
+    console.log(products)
     renderProduct(products)
   } catch {
-    document.getElementById("producs-container").innerHTML = "hông thể tải sản phẩm. Vui lòng thử lại.</p>"
+    document.getElementById("products-container").innerHTML = "hông thể tải sản phẩm. Vui lòng thử lại.</p>"
   }
 }
-console.log(fetchProduct())
+
 fetchProduct();
 
 const productContainer = document.getElementById("products-container");
@@ -29,9 +30,9 @@ function renderProduct(danhsach) {
   danhsach.forEach(function (product) {
     const productHTML = `
             <div class = "product-card">
-    <img src="${product.image}" alt="${product.name}" class="product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;">
+    <img src="${product.image}" alt="${product.title}" class="product-img" onclick="openQuickView(${product.id})" style="cursor: pointer;">
         <div class = "product-info">
-        <h3 class ="product-name">${product.name}</h3> 
+        <h3 class ="product-name">${product.title}</h3> 
         <p class = "product-price">${product.price.toLocaleString("vi-VN")}đ</p>
         <button class="add-to-cart-btn" data-id="${product.id}">thêm vào giỏ hàng</button>
         </div>
@@ -56,7 +57,7 @@ function renderProduct(danhsach) {
         const newProduct = { ...productClicked, quantity: 1 };
         cart.push(newProduct);
       }
-      showToast("đã thêm " + productClicked.name + " vào giỏ hàng");
+      showToast("đã thêm " + productClicked.title + " vào giỏ hàng");
       updateCartBadge();
       saveCart();
       renderCart();
@@ -110,9 +111,9 @@ function renderCart() {
   cart.forEach(function (item, index) {
     total += item.price * item.quantity;
     const itemHTML = ` <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${item.image}" alt="${item.title}">
                 <div class="cart-item-info">
-                    <h4>${item.name}</h4>
+                    <h4>${item.title}</h4>
                     <p>${item.price.toLocaleString("vi-VN")}đ</p>
                      <div class="quantity-controls">
                         <button onclick="changeQuantity(${index}, -1)">-</button>
@@ -161,7 +162,7 @@ function showToast(message) {
 textInput.addEventListener("input", function (event) {
   const TextCanTim = event.target.value.toLowerCase();
   const ketQua = products.filter(function (product) {
-    const tenSanPham = product.name.toLowerCase();
+    const tenSanPham = product.title.toLowerCase();
     return tenSanPham.includes(TextCanTim);
   });
   renderProduct(ketQua);
@@ -217,7 +218,7 @@ function openQuickView(productId) {
   });
   if (productClick) {
     document.getElementById("modal-img").src = productClick.image;
-    document.getElementById("modal-name").innerText = productClick.name;
+    document.getElementById("modal-name").innerText = productClick.title;
     document.getElementById("modal-price").innerText =
       productClick.price.toLocaleString("vi-VN") + "đ";
     document.getElementById("modal-category").querySelector("span").innerText =
