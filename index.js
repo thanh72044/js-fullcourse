@@ -11,6 +11,7 @@ async function fetchProduct() {
     document.getElementById("producs-container").innerHTML = "hông thể tải sản phẩm. Vui lòng thử lại.</p>"
   }
 }
+console.log(fetchProduct())
 fetchProduct();
 
 const productContainer = document.getElementById("products-container");
