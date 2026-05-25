@@ -1,38 +1,17 @@
-const products = [
-  {
-    id: 1,
-    name: "tai nghe bluetooth",
-    price: 200000,
-    image:
-      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    category: "phụ kiện",
-  },
-  {
-    id: 2,
-    name: "Bàn phím cơ Keychron",
-    price: 2100000,
-    image:
-      "https://images.unsplash.com/photo-1595225476474-87563907a212?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    category: "phụ kiện",
-  },
-  {
-    id: 3,
-    name: "Chuột Logitech Master 3",
-    price: 1800000,
-    image:
-      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    category: "chuột",
-  },
-  {
-    id: 4,
-    name: "Màn hình Dell Ultrasharp",
-    price: 6500000,
-    image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    category: "màn hình",
-  },
-];
-console.log("danh sách sản phầm của tôi", products);
+let Products = []
+
+async function fetchProduct() {
+  try {
+    document.getElementById("product-container").innerHTML = "<p>Đang tải sản phẩm...</p>"
+    const response = await fetch('https://fakestoreapi.com/products')
+    const data = await response.json()
+    Products = data;
+    renderProduct(Products)
+  } catch {
+    document.getElementById("producs-container").innerHTML = "hông thể tải sản phẩm. Vui lòng thử lại.</p>"
+  }
+}
+fetchProduct();
 
 const productContainer = document.getElementById("products-container");
 const cartBadge = document.querySelector(".cart-count");
@@ -81,7 +60,6 @@ function renderProduct(danhsach) {
       saveCart();
       renderCart();
       btn.classList.add("animating");
-      cartIcon.classList.add("bounce")
       cartIcon.classList.add("bounce");
       btn.innerText = "dã thêm ✔";
       btn.style.background = "#10b981";
