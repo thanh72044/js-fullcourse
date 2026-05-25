@@ -1,12 +1,12 @@
-let Products = []
+let products = []
 
 async function fetchProduct() {
   try {
-    document.getElementById("product-container").innerHTML = "<p>Đang tải sản phẩm...</p>"
+    document.getElementById("products-container").innerHTML = "<p>Đang tải sản phẩm...</p>"
     const response = await fetch('https://fakestoreapi.com/products')
     const data = await response.json()
-    Products = data;
-    renderProduct(Products)
+    products = data;
+    renderProduct(products)
   } catch {
     document.getElementById("producs-container").innerHTML = "hông thể tải sản phẩm. Vui lòng thử lại.</p>"
   }
