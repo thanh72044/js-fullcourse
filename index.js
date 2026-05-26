@@ -196,7 +196,7 @@ sortSelect.addEventListener("change", function (event) {
   // Tạo bản sao để không làm thay đổi mảng gốc
   let sortedProducts = [...products];
 
-  if (sortValue === "asc") {
+  if (sortValue === "asc") { 
     // Sắp xếp tăng dần
     sortedProducts.sort(function (a, b) {
       return a.price - b.price;
